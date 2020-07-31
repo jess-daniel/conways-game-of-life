@@ -54,6 +54,12 @@
   margin: 10px 5px;
 }
 
+.g-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .content {
   display: flex;
 }
@@ -68,4 +74,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 5%;
+  line-height: 1.5rem;
+}
+
+.about li {
+  text-align: left;
 }

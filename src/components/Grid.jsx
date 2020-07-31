@@ -78,42 +78,44 @@ const Grid = ({ rows, cols, speed }) => {
           ))
         )}
       </div>
-      <button
-        className="btn"
-        onClick={() => {
-          setRunning(!running);
-          if (!running) {
-            runningRef.current = true;
-            runSimulation();
-          }
-        }}
-      >
-        {running ? "stop" : "start"}
-      </button>
-      <button
-        className="btn"
-        onClick={() => {
-          const newRows = [];
-          for (let i = 0; i < rows; i++) {
-            newRows.push(
-              Array.from(Array(cols), () => (Math.random() > 0.7 ? 1 : 0))
-            );
-          }
+      <div className="g-btn">
+        <button
+          className="btn"
+          onClick={() => {
+            setRunning(!running);
+            if (!running) {
+              runningRef.current = true;
+              runSimulation();
+            }
+          }}
+        >
+          {running ? "stop" : "start"}
+        </button>
+        <button
+          className="btn"
+          onClick={() => {
+            const newRows = [];
+            for (let i = 0; i < rows; i++) {
+              newRows.push(
+                Array.from(Array(cols), () => (Math.random() > 0.7 ? 1 : 0))
+              );
+            }
 
-          setGrid(newRows);
-        }}
-      >
-        random
-      </button>
-      <button
-        className="btn"
-        onClick={() => {
-          setGrid(generateGrid(rows, cols));
-          setGeneration(0);
-        }}
-      >
-        clear
-      </button>
+            setGrid(newRows);
+          }}
+        >
+          random
+        </button>
+        <button
+          className="btn"
+          onClick={() => {
+            setGrid(generateGrid(rows, cols));
+            setGeneration(0);
+          }}
+        >
+          clear
+        </button>
+      </div>
     </div>
   );
 };
